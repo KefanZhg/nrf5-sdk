@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# VS Code
+.vscode/
+
+# ARM GCC build directory
+**/_build/
