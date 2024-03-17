@@ -37,8 +37,8 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef CUSTOM_BOARD_H
-#define CUSTOM_BOARD_H
+#ifndef KIDEAS0001_H
+#define KIDEAS0001_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -146,4 +146,4 @@ extern "C" {
 }
 #endif
 
-#endif // CUSTOM_BOARD_H
+#endif // KIDEAS0001_H
