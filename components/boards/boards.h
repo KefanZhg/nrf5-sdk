@@ -85,6 +85,8 @@
   #include STRINGIFY(CUSTOM_BOARD_INC.h)
 #elif defined(BOARD_CUSTOM)
   #include "custom_board.h"
+#elif defined(BOARD_NRF52840_KERNEL_1)
+  #include "nrf52840_kernel_1.h"
 #else
 #error "Board is not defined"
 
