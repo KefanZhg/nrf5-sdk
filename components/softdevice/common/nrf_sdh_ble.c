@@ -237,11 +237,16 @@ ret_code_t nrf_sdh_ble_enable(uint32_t * const p_app_ram_start)
     }
     else
     {
+            /* Modified by Kefan, 12/22/2023 */
+        NRF_LOG_INFO("RAM starts at 0x%x", app_ram_start_link);
         NRF_LOG_DEBUG("RAM starts at 0x%x", app_ram_start_link);
         if (*p_app_ram_start != app_ram_start_link)
         {
+            NRF_LOG_INFO("RAM start location can be adjusted to 0x%x.", *p_app_ram_start);
             NRF_LOG_DEBUG("RAM start location can be adjusted to 0x%x.", *p_app_ram_start);
 
+            NRF_LOG_INFO("RAM size for application can be adjusted to 0x%x.",
+                          ram_end_address_get() - (*p_app_ram_start));
             NRF_LOG_DEBUG("RAM size for application can be adjusted to 0x%x.",
                           ram_end_address_get() - (*p_app_ram_start));
         }
