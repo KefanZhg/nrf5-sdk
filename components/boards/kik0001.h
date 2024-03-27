@@ -72,8 +72,17 @@ extern "C" {
 
 #define BSP_BUTTON_1   BUTTON_1
 
-#define RX_PIN_NUMBER  NRF_LOG_BACKEND_UART_RX_PIN
-#define TX_PIN_NUMBER  NRF_LOG_BACKEND_UART_TX_PIN
+#ifdef APP_CONFIG_RX_PIN_NUMBER
+#define RX_PIN_NUMBER  APP_CONFIG_RX_PIN_NUMBER
+#else
+#define RX_PIN_NUMBER  6
+#endif
+#ifdef APP_CONFIG_TX_PIN_NUMBER
+#define TX_PIN_NUMBER  APP_CONFIG_TX_PIN_NUMBER
+#else
+#define TX_PIN_NUMBER  26
+#endif
+
 #define HWFC           false
 
 #define BSP_QSPI_SCK_PIN   NRF_GPIO_PIN_MAP(1,13)
