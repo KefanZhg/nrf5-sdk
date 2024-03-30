@@ -55,21 +55,34 @@ static const uint8_t m_board_btn_list[BUTTONS_NUMBER] = BUTTONS_LIST;
 #if LEDS_NUMBER > 0
 bool bsp_board_led_state_get(uint32_t led_idx)
 {
-    ASSERT(led_idx < LEDS_NUMBER);
-    bool pin_set = nrf_gpio_pin_out_read(m_board_led_list[led_idx]) ? true : false;
-    return (pin_set == (LEDS_ACTIVE_STATE ? true : false));
+    // ASSERT(led_idx < LEDS_NUMBER);
+    if (led_idx < LEDS_NUMBER)
+    {
+        bool pin_set = nrf_gpio_pin_out_read(m_board_led_list[led_idx]) ? true : false;
+        return (pin_set == (LEDS_ACTIVE_STATE ? true : false));
+    }
+    else
+    {
+        return false;
+    }
 }
 
 void bsp_board_led_on(uint32_t led_idx)
 {
-        ASSERT(led_idx < LEDS_NUMBER);
+    // ASSERT(led_idx < LEDS_NUMBER);
+    if (led_idx < LEDS_NUMBER)
+    {
         nrf_gpio_pin_write(m_board_led_list[led_idx], LEDS_ACTIVE_STATE ? 1 : 0);
+    }
 }
 
 void bsp_board_led_off(uint32_t led_idx)
 {
-    ASSERT(led_idx < LEDS_NUMBER);
-    nrf_gpio_pin_write(m_board_led_list[led_idx], LEDS_ACTIVE_STATE ? 0 : 1);
+    // ASSERT(led_idx < LEDS_NUMBER);
+    if (led_idx < LEDS_NUMBER)
+    {
+        nrf_gpio_pin_write(m_board_led_list[led_idx], LEDS_ACTIVE_STATE ? 0 : 1);
+    }
 }
 
 void bsp_board_leds_off(void)
@@ -92,8 +105,11 @@ void bsp_board_leds_on(void)
 
 void bsp_board_led_invert(uint32_t led_idx)
 {
-    ASSERT(led_idx < LEDS_NUMBER);
-    nrf_gpio_pin_toggle(m_board_led_list[led_idx]);
+    // ASSERT(led_idx < LEDS_NUMBER);
+    if (led_idx < LEDS_NUMBER)
+    {
+        nrf_gpio_pin_toggle(m_board_led_list[led_idx]);
+    }
 }
 
 #if defined(BOARD_PCA10059)
@@ -146,8 +162,15 @@ static void bsp_board_leds_init(void)
 
 uint32_t bsp_board_led_idx_to_pin(uint32_t led_idx)
 {
-    ASSERT(led_idx < LEDS_NUMBER);
-    return m_board_led_list[led_idx];
+    // ASSERT(led_idx < LEDS_NUMBER);
+    if (led_idx < LEDS_NUMBER)
+    {
+        return m_board_led_list[led_idx];
+    }
+    else
+    {
+        return 0xFFFFFFFF;
+    }
 }
 
 uint32_t bsp_board_pin_to_led_idx(uint32_t pin_number)
@@ -169,9 +192,16 @@ uint32_t bsp_board_pin_to_led_idx(uint32_t pin_number)
 #if BUTTONS_NUMBER > 0
 bool bsp_board_button_state_get(uint32_t button_idx)
 {
-    ASSERT(button_idx < BUTTONS_NUMBER);
-    bool pin_set = nrf_gpio_pin_read(m_board_btn_list[button_idx]) ? true : false;
-    return (pin_set == (BUTTONS_ACTIVE_STATE ? true : false));
+    // ASSERT(button_idx < BUTTONS_NUMBER);
+    if (button_idx < BUTTONS_NUMBER)
+    {
+        bool pin_set = nrf_gpio_pin_read(m_board_btn_list[button_idx]) ? true : false;
+        return (pin_set == (BUTTONS_ACTIVE_STATE ? true : false));
+    }
+    else
+    {
+        return false;
+    }
 }
 
 static void bsp_board_buttons_init(void)
@@ -200,8 +230,15 @@ uint32_t bsp_board_pin_to_button_idx(uint32_t pin_number)
 
 uint32_t bsp_board_button_idx_to_pin(uint32_t button_idx)
 {
-    ASSERT(button_idx < BUTTONS_NUMBER);
-    return m_board_btn_list[button_idx];
+    // ASSERT(button_idx < BUTTONS_NUMBER);
+    if (button_idx < BUTTONS_NUMBER)
+    {
+        return m_board_btn_list[button_idx];
+    }
+    else
+    {
+        return 0xFFFFFFFF;
+    }
 }
 #endif //BUTTONS_NUMBER > 0
 

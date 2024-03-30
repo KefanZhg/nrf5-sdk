@@ -1,7 +1,44 @@
 <!DOCTYPE CrossStudio_Session_File>
 <session>
-  <ARMCrossStudioWindow activeProject="twi_scanner_pca10056" buildConfiguration="Release"/>
-  <Files>
-    <SessionOpenFile codecName="Default" debugPath="../../../main.c" left="0" name="unnamed" path="../../../main.c" selected="1" top="0" useBinaryEdit="0" useTextEdit="1" x="0" y="0"/>
-  </Files>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBuffer/>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="twi_scanner_pca10056"/>
+  <ProjectSessionItem path="twi_scanner_pca10056;twi_scanner_pca10056"/>
+  <ProjectSessionItem path="twi_scanner_pca10056;twi_scanner_pca10056;Application"/>
+  <ProjectSessionItem path="twi_scanner_pca10056;twi_scanner_pca10056;nRF_Segger_RTT"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="44" y="83" useTextEdit="1" path="../../../main.c" left="0" top="61" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="69" useTextEdit="1" path="../../../../../../external/segger_rtt/SEGGER_RTT_Syscalls_SES.c" left="0" selected="1" top="53" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="twi_scanner_pca10056" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
